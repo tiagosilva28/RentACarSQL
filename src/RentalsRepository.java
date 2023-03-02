@@ -2,15 +2,12 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class RentalsRepository {
 
-    List<Map<String, Object>> getRentals() throws SQLException {
-        List<Map<String, Object>> rentals = new LinkedList<>();
+    List<LinkedHashMap<String, Object>> getRentals() throws SQLException {
+        List<LinkedHashMap<String, Object>> rentals = new LinkedList<>();
 
         Connection connection = Utilities.getConnection();
         // CREATING A STATEMENT
@@ -30,7 +27,7 @@ public class RentalsRepository {
             String car_make = resultSet.getString("make");
             String car_model = resultSet.getString("model");
 
-            Map<String, Object> rental = new HashMap<>();
+            LinkedHashMap<String, Object> rental = new LinkedHashMap<>();
             rental.put("rental_id", rental_id);
             rental.put("name", name);
             rental.put("car_make", car_make);
@@ -41,7 +38,6 @@ public class RentalsRepository {
 
 
         }
-
         return rentals;
     }
 
