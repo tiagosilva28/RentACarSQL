@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Main {
     static CustomerRepository cr = new CustomerRepository();
+    static RentalsRepository rr = new RentalsRepository();
     public static void main(String[] args) {
 
         try {
@@ -12,7 +13,9 @@ public class Main {
            // System.out.println(cr.getCustomer(4));
             //cr.updateCustomer(cr.getCustomer(1));
             //cr.deleteCustomer(10);
-            cr.createCustomer(new Customer());
+            //cr.createCustomer(new Customer());
+            rr.getRentals().forEach(System.out::println);
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
