@@ -14,6 +14,14 @@ private String email;
         this.email = email;
     }
 
+    public Customer() {
+
+    }
+
+    public int getClient_id() {
+        return client_id;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +

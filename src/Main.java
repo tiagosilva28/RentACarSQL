@@ -9,7 +9,10 @@ public class Main {
 
         try {
             //getCustomers().forEach(System.out::println);
-            System.out.println(cr.getCustomer(1));
+           // System.out.println(cr.getCustomer(4));
+            //cr.updateCustomer(cr.getCustomer(1));
+            //cr.deleteCustomer(10);
+            cr.createCustomer(new Customer());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
